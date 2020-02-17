@@ -19,8 +19,15 @@ class CotegoriesLoader{
             response in
             if let objects = response.result.value, let jsonDict = objects as? [String : Any] {
                 let categories = self.getCategories(jsonDict: jsonDict)
+                let sortCategories = categories.sorted {
+                    item1, item2 in
+                    Int(item1.sortOrder)! < Int(item2.sortOrder)!
+                }
+                for item in sortCategories {
+                    print("Sort categories item \(item.name), where id = \(item.id)")
+                }
                 DispatchQueue.main.async {
-                    completition(categories)
+                    completition(sortCategories)
                 }
             }
         }

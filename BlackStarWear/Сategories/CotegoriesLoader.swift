@@ -23,9 +23,6 @@ class CotegoriesLoader{
                     item1, item2 in
                     Int(item1.sortOrder)! < Int(item2.sortOrder)!
                 }
-                for item in sortCategories {
-                    print("Sort categories item \(item.name), where id = \(item.id)")
-                }
                 DispatchQueue.main.async {
                     completition(sortCategories)
                 }

@@ -30,15 +30,26 @@ class CategoriesViewController: UIViewController {
             CotegoriesLoader().loadImage(link: self.categories[index].imageLink){
                 gotImage in
                 self.categories[index].image = gotImage
-                print("After load \(self.categories[index].name), \(self.categories[index].imageLink)")
                 self.tableView.reloadData()
             }
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "SubcategoriesSegue",
+            let destination = segue.destination as? SubcategoriesViewController,
+            let cell = sender as? UITableViewCell,
+            let i = tableView.indexPath(for: cell),
+            let subcategories = categories[i.row].subcategories
+        {
+            destination.subcategories = subcategories
+            destination.screenName = categories[i.row].name
+        }
+    }
+    
 }
 
-extension CategoriesViewController: UITableViewDataSource {
+extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         categories.count
     }
@@ -67,5 +78,8 @@ extension CategoriesViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SubcategoriesSegue", sender: tableView.cellForRow(at: indexPath))
+    }
 }
 

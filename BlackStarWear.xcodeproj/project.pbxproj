@@ -19,6 +19,7 @@
 		31296F5623F6A01A00A2DD9F /* CategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F5523F6A01A00A2DD9F /* CategoriesTableViewCell.swift */; };
 		31296F5823F6A2FE00A2DD9F /* CotegoriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F5723F6A2FE00A2DD9F /* CotegoriesLoader.swift */; };
 		31296F5A23F6A3A000A2DD9F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F5923F6A3A000A2DD9F /* Category.swift */; };
+		31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3D3C023FAEDA000CBEC38 /* SubcategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		31296F5523F6A01A00A2DD9F /* CategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		31296F5723F6A2FE00A2DD9F /* CotegoriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CotegoriesLoader.swift; sourceTree = "<group>"; };
 		31296F5923F6A3A000A2DD9F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		31E3D3C023FAEDA000CBEC38 /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
 		647796C4D1AEF73D4A45A6A3 /* Pods-BlackStarWear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWear.release.xcconfig"; path = "Target Support Files/Pods-BlackStarWear/Pods-BlackStarWear.release.xcconfig"; sourceTree = "<group>"; };
 		FCB94964F701E4ED8A9DBCE5 /* Pods_BlackStarWear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				31296F3A23F4336F00A2DD9F /* AppDelegate.swift */,
 				31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */,
 				31296F5023F69ECE00A2DD9F /* Сategories */,
+				313AE29B23FAD1CE002C7531 /* Subcategories */,
 				31296F4023F4336F00A2DD9F /* Main.storyboard */,
 				31296F4323F4337100A2DD9F /* Assets.xcassets */,
 				31296F4523F4337100A2DD9F /* LaunchScreen.storyboard */,
@@ -103,6 +106,14 @@
 				31296F5523F6A01A00A2DD9F /* CategoriesTableViewCell.swift */,
 			);
 			path = "Сategories";
+			sourceTree = "<group>";
+		};
+		313AE29B23FAD1CE002C7531 /* Subcategories */ = {
+			isa = PBXGroup;
+			children = (
+				31E3D3C023FAEDA000CBEC38 /* SubcategoriesViewController.swift */,
+			);
+			path = Subcategories;
 			sourceTree = "<group>";
 		};
 		64C5B292633E6BDBBA2A0E97 /* Pods */ = {
@@ -231,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */,
+				31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */,
 				31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */,
 				31296F5823F6A2FE00A2DD9F /* CotegoriesLoader.swift in Sources */,
 				31296F5223F69F0B00A2DD9F /* CategoriesViewController.swift in Sources */,

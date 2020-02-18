@@ -17,7 +17,7 @@ class CategoriesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        CotegoriesLoader().loadCategories(completition: {
+        Loader().loadCategories(completition: {
             categories in
             self.categories = categories
             self.tableView.reloadData()
@@ -27,7 +27,7 @@ class CategoriesViewController: UIViewController {
     
     func addImage(){
         for index in self.categories.indices {
-            CotegoriesLoader().loadImage(link: self.categories[index].imageLink){
+            Loader().loadImage(link: self.categories[index].imageLink){
                 gotImage in
                 self.categories[index].image = gotImage
                 self.tableView.reloadData()
@@ -44,6 +44,15 @@ class CategoriesViewController: UIViewController {
         {
             destination.subcategories = subcategories
             destination.screenName = categories[i.row].name
+        } else if
+            segue.identifier == "CatalogSegueFromMain",
+            let destination = segue.destination as? CatalogCollectionViewController,
+            let cell = sender as? UITableViewCell,
+            let i = tableView.indexPath(for: cell)
+        {
+            destination.categoryId = categories[i.row].id
+            destination.screenName = categories[i.row].name
+            destination.backBtnName = "Каталог"
         }
     }
     
@@ -79,7 +88,11 @@ extension CategoriesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "SubcategoriesSegue", sender: tableView.cellForRow(at: indexPath))
+        if !categories[indexPath.row].subcategories!.isEmpty{
+            performSegue(withIdentifier: "SubcategoriesSegue", sender: tableView.cellForRow(at: indexPath))
+        } else {
+            performSegue(withIdentifier: "CatalogSegueFromMain", sender: tableView.cellForRow(at: indexPath))
+        }
     }
 }
 

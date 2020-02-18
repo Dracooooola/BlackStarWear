@@ -26,7 +26,7 @@ class SubcategoriesViewController: UIViewController {
     
     func addImage(){
         for index in self.subcategories.indices {
-            CotegoriesLoader().loadImage(link: self.subcategories[index].imageLink){
+            Loader().loadImage(link: self.subcategories[index].imageLink){
                 gotImage in
                 self.subcategories[index].image = gotImage
                 self.tableView.reloadData()
@@ -34,6 +34,17 @@ class SubcategoriesViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CatalogSegueFromSubcategories",
+            let destination = segue.destination as? CatalogCollectionViewController,
+            let cell = sender as? UITableViewCell,
+            let i = tableView.indexPath(for: cell)
+            {
+                destination.categoryId = subcategories[i.row].id
+                destination.screenName = subcategories[i.row].name
+                destination.backBtnName = screenName
+            }
+    }
 }
 
 extension SubcategoriesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -53,5 +64,9 @@ extension SubcategoriesViewController: UITableViewDataSource, UITableViewDelegat
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CatalogSegueFromSubcategories", sender: tableView.cellForRow(at: indexPath))
     }
 }

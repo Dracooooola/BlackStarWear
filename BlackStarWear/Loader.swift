@@ -30,7 +30,7 @@ class Loader{
         }
     }
     
-    func getCategories(jsonDict: [String : Any]) -> [Category] {
+    private func getCategories(jsonDict: [String : Any]) -> [Category] {
         var categories: [Category] = []
         
         for (i, value) in jsonDict {
@@ -85,6 +85,7 @@ class Loader{
                     var price = productJson["price"] as! String
                     price.removeLast(5)
                     var imagesLinkDict: [String : String] = [:]
+                    let productAttributes = productJson["attributes"] as! [(atttibuteName: String, atttibuteData: String)]
                         
                     let jsonImagesLinks = productJson["productImages"] as! [[String : String]]
                         
@@ -93,8 +94,14 @@ class Loader{
                         let sortOrderImage = dict["sortOrder"]!
                         imagesLinkDict[sortOrderImage] = url
                     }
-                        
-                    let product = Product(id: id, name: name, sortOrder: sortOrder, article: article, collection: collection, description: description, colorName: colorName, mainImageLink: mainImageLink, imagesLinkDict: imagesLinkDict, price: price)
+                    
+                    let arrayImageOrders = imagesLinkDict.keys.sorted{ $0 > $1}
+                    var arrayImageLinks: [String] = []
+                    for value in arrayImageOrders {
+                        arrayImageLinks.append(imagesLinkDict[value]!)
+                    }
+                    
+                    let product = Product(id: id, name: name, sortOrder: sortOrder, article: article, collection: collection, description: description, colorName: colorName, mainImageLink: mainImageLink, arrayImageLinks: arrayImageLinks, price: price, productAttributes: productAttributes)
                     
                     tempProducts.append(product)
                 }
@@ -123,4 +130,5 @@ class Loader{
             }
         }
     }
+    
 }

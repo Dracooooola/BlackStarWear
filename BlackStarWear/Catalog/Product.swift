@@ -16,12 +16,15 @@ struct Product {
     let sortOrder: String
     let article: String
     let collection: String?
-    let description: String
+    var description: String
     let colorName: String
     let mainImageLink: String
-    let imagesLinkDict: [String : String]?
+    let arrayImageLinks: [String]?
     
     let price: String
     
     var mainImage: UIImage? = nil
+    var gallery: [UIImage?] = []
+    
+    let productAttributes: [(atttibuteName: String, atttibuteData: String)]
 }

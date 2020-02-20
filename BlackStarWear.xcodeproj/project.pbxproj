@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BFC627938896C9559931141 /* Pods_BlackStarWear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB94964F701E4ED8A9DBCE5 /* Pods_BlackStarWear.framework */; };
+		31188E1E23FD66B90038661C /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31188E1D23FD66B90038661C /* SingleProductViewController.swift */; };
 		31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F3A23F4336F00A2DD9F /* AppDelegate.swift */; };
 		31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */; };
 		31296F4223F4336F00A2DD9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31296F4023F4336F00A2DD9F /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		0D70A2B7FD6247550E894811 /* Pods-BlackStarWear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWear.debug.xcconfig"; path = "Target Support Files/Pods-BlackStarWear/Pods-BlackStarWear.debug.xcconfig"; sourceTree = "<group>"; };
+		31188E1D23FD66B90038661C /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
 		31296F3723F4336F00A2DD9F /* BlackStarWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31296F3A23F4336F00A2DD9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				31296F3A23F4336F00A2DD9F /* AppDelegate.swift */,
+				31188E1D23FD66B90038661C /* SingleProductViewController.swift */,
 				31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */,
 				31296F5723F6A2FE00A2DD9F /* Loader.swift */,
 				31C65A7323FC19C300913A84 /* Catalog */,
@@ -249,6 +252,7 @@
 			files = (
 				31C65A7B23FC328200913A84 /* ProductsCollectionViewCell.swift in Sources */,
 				31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */,
+				31188E1E23FD66B90038661C /* SingleProductViewController.swift in Sources */,
 				31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */,
 				31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */,
 				31296F5823F6A2FE00A2DD9F /* Loader.swift in Sources */,

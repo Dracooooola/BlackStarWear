@@ -26,5 +26,5 @@ struct Product {
     var mainImage: UIImage? = nil
     var gallery: [UIImage?] = []
     
-    let productAttributes: [(atttibuteName: String, atttibuteData: String)]
+    let productAttributes: [[String : String]]
 }

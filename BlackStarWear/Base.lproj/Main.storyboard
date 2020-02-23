@@ -181,6 +181,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-ft-M2a">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="483"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="l5V-ft-M2a" secondAttribute="height" multiplier="6:7" id="tCp-w6-Atp"/>
                                                 </constraints>

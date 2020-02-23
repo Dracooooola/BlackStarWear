@@ -28,7 +28,7 @@ class SingleProductViewController: UIViewController {
     @IBOutlet weak var attributesStackViewLine: UIStackView!
     @IBOutlet weak var attributeName: UILabel!
     @IBOutlet weak var attributeData: UILabel!
-    
+        
     var product: Product?
     private var viewForSlider = UIView()
     private var circleSliderArray: [UIView] = []

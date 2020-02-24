@@ -22,6 +22,7 @@
 		31C65A7523FC19FA00913A84 /* CatalogCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C65A7423FC19FA00913A84 /* CatalogCollectionViewController.swift */; };
 		31C65A7923FC1BD000913A84 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C65A7823FC1BD000913A84 /* Product.swift */; };
 		31C65A7B23FC328200913A84 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C65A7A23FC328200913A84 /* ProductsCollectionViewCell.swift */; };
+		31CFD2E82402BF300038243C /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CFD2E72402BF300038243C /* SliderCollectionViewCell.swift */; };
 		31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3D3C023FAEDA000CBEC38 /* SubcategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		31C65A7423FC19FA00913A84 /* CatalogCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCollectionViewController.swift; sourceTree = "<group>"; };
 		31C65A7823FC1BD000913A84 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		31C65A7A23FC328200913A84 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		31CFD2E72402BF300038243C /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		31E3D3C023FAEDA000CBEC38 /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
 		647796C4D1AEF73D4A45A6A3 /* Pods-BlackStarWear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWear.release.xcconfig"; path = "Target Support Files/Pods-BlackStarWear/Pods-BlackStarWear.release.xcconfig"; sourceTree = "<group>"; };
 		FCB94964F701E4ED8A9DBCE5 /* Pods_BlackStarWear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,9 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				31296F3A23F4336F00A2DD9F /* AppDelegate.swift */,
-				31188E1D23FD66B90038661C /* SingleProductViewController.swift */,
 				31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */,
 				31296F5723F6A2FE00A2DD9F /* Loader.swift */,
+				31CFD2E62402BEF30038243C /* SingleProduct */,
 				31C65A7323FC19C300913A84 /* Catalog */,
 				31296F5023F69ECE00A2DD9F /* СategoriesAndSubcategories */,
 				31296F4023F4336F00A2DD9F /* Main.storyboard */,
@@ -119,10 +121,19 @@
 			isa = PBXGroup;
 			children = (
 				31C65A7423FC19FA00913A84 /* CatalogCollectionViewController.swift */,
-				31C65A7823FC1BD000913A84 /* Product.swift */,
 				31C65A7A23FC328200913A84 /* ProductsCollectionViewCell.swift */,
 			);
 			path = Catalog;
+			sourceTree = "<group>";
+		};
+		31CFD2E62402BEF30038243C /* SingleProduct */ = {
+			isa = PBXGroup;
+			children = (
+				31188E1D23FD66B90038661C /* SingleProductViewController.swift */,
+				31C65A7823FC1BD000913A84 /* Product.swift */,
+				31CFD2E72402BF300038243C /* SliderCollectionViewCell.swift */,
+			);
+			path = SingleProduct;
 			sourceTree = "<group>";
 		};
 		64C5B292633E6BDBBA2A0E97 /* Pods */ = {
@@ -253,6 +264,7 @@
 				31C65A7B23FC328200913A84 /* ProductsCollectionViewCell.swift in Sources */,
 				31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */,
 				31188E1E23FD66B90038661C /* SingleProductViewController.swift in Sources */,
+				31CFD2E82402BF300038243C /* SliderCollectionViewCell.swift in Sources */,
 				31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */,
 				31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */,
 				31296F5823F6A2FE00A2DD9F /* Loader.swift in Sources */,

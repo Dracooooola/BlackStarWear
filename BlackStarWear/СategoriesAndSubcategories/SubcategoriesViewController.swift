@@ -24,7 +24,7 @@ class SubcategoriesViewController: UIViewController {
         navigationItem.title = self.screenName
     }
     
-    func addImage(){
+    private func addImage(){
         for index in self.subcategories.indices {
             Loader().loadImage(link: self.subcategories[index].imageLink){
                 gotImage in
@@ -42,7 +42,6 @@ class SubcategoriesViewController: UIViewController {
             {
                 destination.categoryId = subcategories[i.row].id
                 destination.screenName = subcategories[i.row].name
-                destination.backBtnName = screenName
             }
     }
 }

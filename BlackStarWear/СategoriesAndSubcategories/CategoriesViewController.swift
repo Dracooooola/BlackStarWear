@@ -25,7 +25,7 @@ class CategoriesViewController: UIViewController {
         })
     }
     
-    func addImage(){
+    private func addImage(){
         for index in self.categories.indices {
             Loader().loadImage(link: self.categories[index].imageLink){
                 gotImage in
@@ -52,7 +52,6 @@ class CategoriesViewController: UIViewController {
         {
             destination.categoryId = categories[i.row].id
             destination.screenName = categories[i.row].name
-            destination.backBtnName = "Каталог"
         }
     }
     

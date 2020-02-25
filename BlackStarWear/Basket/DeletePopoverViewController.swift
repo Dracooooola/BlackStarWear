@@ -40,7 +40,7 @@ class DeletePopoverViewController: UIViewController {
         self.showAnimate()
     }
     
-    func showAnimate(){
+    private func showAnimate(){
         self.view.transform = .init(scaleX: 1.3, y: 1.3)
         self.view.alpha = 0.0
         UIView.animate(withDuration: 0.25, animations: {
@@ -49,7 +49,7 @@ class DeletePopoverViewController: UIViewController {
         })
     }
     
-    func removeAnimate() {
+    private func removeAnimate() {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.transform = .init(scaleX: 1.3, y: 1.3)
             self.view.alpha = 0.0

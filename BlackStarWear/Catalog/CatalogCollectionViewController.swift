@@ -13,14 +13,12 @@ private let reuseIdentifier = "CatalogCell"
 class CatalogCollectionViewController: UICollectionViewController {
 
     var categoryId = ""
-    var products: [Product] = []
+    private var products: [Product] = []
     var screenName = ""
-    var backBtnName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = self.screenName
-        navigationItem.backBarButtonItem?.title = self.backBtnName
         Loader().loadCatalog(categoryId: categoryId, completition: {
             products in
             self.products = products
@@ -29,7 +27,7 @@ class CatalogCollectionViewController: UICollectionViewController {
         })
     }
     
-    func addImage(){
+    private func addImage(){
         for index in self.products.indices {
             Loader().loadImage(link: self.products[index].mainImageLink) {
                 gotImage in

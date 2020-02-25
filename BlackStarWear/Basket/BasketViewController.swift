@@ -15,17 +15,41 @@ class BasketViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func goNextScreen(_ sender: UIButton) {
+        if goHome {
+            let vc = storyboard!.instantiateViewController(identifier: "MainScreen")
+            show(vc, sender: nil)
+        }
     }
     
-    var products = Persistance.shared.getItems()
-    var images: [UIImage] = []
+    private var products = Persistance.shared.getItems()
+    private var images: [UIImage] = []
+    private var goHome = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        orderButton.layer.cornerRadius = 10
         addImage()
+        getSumm()
+    }
+        
+    private func getSumm(){
+        var sum = 0
+        for item in products {
+            sum += Int(item.price) ?? 0
+        }
+        priceLabel.text = String(sum)  + " ₽"
+        
+        if sum == 0 {
+            goHome = true
+            orderButton.setTitle("На главную", for: .normal)
+        } else {
+            goHome = false
+            orderButton.setTitle("Оформить заказ", for: .normal)
+        }
+        
     }
     
-    func addImage(){
+    private func addImage(){
         for index in self.products.indices {
             Loader().loadImage(link: self.products[index].mainImageLink) {
                 gotImage in
@@ -57,7 +81,6 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         return cell
     }
-    
 }
 
 extension BasketViewController: BasketTableViewCellDelegate {
@@ -76,5 +99,6 @@ extension BasketViewController: DeletePopoverViewControllerDelegate {
     func deleteItem(indexPath: IndexPath) {
         Persistance.shared.remove(index: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        getSumm()
     }
 }

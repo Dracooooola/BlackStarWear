@@ -86,7 +86,8 @@ class Loader{
                     price.removeLast(5)
                     var imagesLinkDict: [String : String] = [:]
                     let productAttributes = productJson["attributes"] as! [[String : String]]
-      
+                    let offers = productJson["offers"] as! [[String : String]]
+                    
                     let jsonImagesLinks = productJson["productImages"] as! [[String : String]]
                         
                     for dict in jsonImagesLinks {
@@ -101,7 +102,7 @@ class Loader{
                         arrayImageLinks.append(imagesLinkDict[value]!)
                     }
                     
-                    let product = Product(id: id, name: name, sortOrder: sortOrder, article: article, collection: collection, description: description, colorName: colorName, mainImageLink: mainImageLink, arrayImageLinks: arrayImageLinks, price: price, productAttributes: productAttributes)
+                    let product = Product(id: id, name: name, sortOrder: sortOrder, article: article, collection: collection, description: description, colorName: colorName, mainImageLink: mainImageLink, arrayImageLinks: arrayImageLinks, price: price, offers: offers, productAttributes: productAttributes)
                     
                     tempProducts.append(product)
                 }

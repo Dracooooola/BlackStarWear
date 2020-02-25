@@ -26,5 +26,6 @@ struct Product {
     var mainImage: UIImage? = nil
     var gallery: [UIImage?] = []
     
+    var offers: [[String : String]]?
     let productAttributes: [[String : String]]
 }

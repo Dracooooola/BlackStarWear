@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0BFC627938896C9559931141 /* Pods_BlackStarWear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB94964F701E4ED8A9DBCE5 /* Pods_BlackStarWear.framework */; };
 		31188E1E23FD66B90038661C /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31188E1D23FD66B90038661C /* SingleProductViewController.swift */; };
+		311CAAE5240564BD003B508E /* PopoverSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CAAE4240564BD003B508E /* PopoverSizeViewController.swift */; };
+		311CAAE724056F19003B508E /* SizeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CAAE624056F19003B508E /* SizeCellTableViewCell.swift */; };
+		311CAAE9240575D9003B508E /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CAAE8240575D9003B508E /* Persistance.swift */; };
 		31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F3A23F4336F00A2DD9F /* AppDelegate.swift */; };
 		31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */; };
 		31296F4223F4336F00A2DD9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31296F4023F4336F00A2DD9F /* Main.storyboard */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		0D70A2B7FD6247550E894811 /* Pods-BlackStarWear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWear.debug.xcconfig"; path = "Target Support Files/Pods-BlackStarWear/Pods-BlackStarWear.debug.xcconfig"; sourceTree = "<group>"; };
 		31188E1D23FD66B90038661C /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
+		311CAAE4240564BD003B508E /* PopoverSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSizeViewController.swift; sourceTree = "<group>"; };
+		311CAAE624056F19003B508E /* SizeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCellTableViewCell.swift; sourceTree = "<group>"; };
+		311CAAE8240575D9003B508E /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		31296F3723F4336F00A2DD9F /* BlackStarWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31296F3A23F4336F00A2DD9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				31296F3A23F4336F00A2DD9F /* AppDelegate.swift */,
+				311CAAE8240575D9003B508E /* Persistance.swift */,
 				31296F3C23F4336F00A2DD9F /* SceneDelegate.swift */,
 				31296F5723F6A2FE00A2DD9F /* Loader.swift */,
 				31CFD2E62402BEF30038243C /* SingleProduct */,
@@ -132,6 +139,8 @@
 				31188E1D23FD66B90038661C /* SingleProductViewController.swift */,
 				31C65A7823FC1BD000913A84 /* Product.swift */,
 				31CFD2E72402BF300038243C /* SliderCollectionViewCell.swift */,
+				311CAAE624056F19003B508E /* SizeCellTableViewCell.swift */,
+				311CAAE4240564BD003B508E /* PopoverSizeViewController.swift */,
 			);
 			path = SingleProduct;
 			sourceTree = "<group>";
@@ -263,15 +272,18 @@
 			files = (
 				31C65A7B23FC328200913A84 /* ProductsCollectionViewCell.swift in Sources */,
 				31296F3B23F4336F00A2DD9F /* AppDelegate.swift in Sources */,
+				311CAAE724056F19003B508E /* SizeCellTableViewCell.swift in Sources */,
 				31188E1E23FD66B90038661C /* SingleProductViewController.swift in Sources */,
 				31CFD2E82402BF300038243C /* SliderCollectionViewCell.swift in Sources */,
 				31E3D3C123FAEDA000CBEC38 /* SubcategoriesViewController.swift in Sources */,
 				31296F3D23F4336F00A2DD9F /* SceneDelegate.swift in Sources */,
 				31296F5823F6A2FE00A2DD9F /* Loader.swift in Sources */,
+				311CAAE9240575D9003B508E /* Persistance.swift in Sources */,
 				31296F5223F69F0B00A2DD9F /* CategoriesViewController.swift in Sources */,
 				31C65A7923FC1BD000913A84 /* Product.swift in Sources */,
 				31296F5623F6A01A00A2DD9F /* CategoriesTableViewCell.swift in Sources */,
 				31C65A7523FC19FA00913A84 /* CatalogCollectionViewController.swift in Sources */,
+				311CAAE5240564BD003B508E /* PopoverSizeViewController.swift in Sources */,
 				31296F5A23F6A3A000A2DD9F /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

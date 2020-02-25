@@ -18,6 +18,14 @@ class SingleProductViewController: UIViewController {
 
     @IBOutlet weak var buyButton: UIButton!
     @IBAction func buyAction(_ sender: UIButton) {
+        let popoverSizes = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopoverSize") as! PopoverSizeViewController
+        guard let product = self.product, let offers = product.offers else { return }
+        self.addChild(popoverSizes)
+        popoverSizes.view.frame = self.view.frame
+        popoverSizes.data = offers
+        popoverSizes.product = product.name + " " + product.colorName
+        self.view.addSubview(popoverSizes.view)
+        popoverSizes.didMove(toParent: self)
     }
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -33,11 +41,17 @@ class SingleProductViewController: UIViewController {
         super.viewDidLoad()
         addImage()
         self.refactorDescription()
-
-
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        
         buyButton.layer.cornerRadius = 10
         
         guard let product = self.product else {return}
+        addAttributes(product: product)
         pageControl.numberOfPages = 1 + (product.arrayImageLinks?.count ?? 0)
         descriptionLabel.text = product.description
         nameLabel.text = product.name

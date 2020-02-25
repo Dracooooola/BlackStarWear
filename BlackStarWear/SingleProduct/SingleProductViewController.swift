@@ -19,11 +19,10 @@ class SingleProductViewController: UIViewController {
     @IBOutlet weak var buyButton: UIButton!
     @IBAction func buyAction(_ sender: UIButton) {
         let popoverSizes = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopoverSize") as! PopoverSizeViewController
-        guard let product = self.product, let offers = product.offers else { return }
+        guard let product = self.product else { return }
         self.addChild(popoverSizes)
         popoverSizes.view.frame = self.view.frame
-        popoverSizes.data = offers
-        popoverSizes.product = product.name + " " + product.colorName
+        popoverSizes.product = product
         self.view.addSubview(popoverSizes.view)
         popoverSizes.didMove(toParent: self)
     }

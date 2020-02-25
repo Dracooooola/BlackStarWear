@@ -12,8 +12,7 @@ class PopoverSizeViewController: UIViewController {
 
     @IBOutlet weak var sizeView: UIView!
     
-    var data: [[String : String]] = []
-    var product = ""
+    var product: Product? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +24,24 @@ class PopoverSizeViewController: UIViewController {
 }
 
 extension PopoverSizeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.data.count
+        self.product?.offers?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sizeCell", for: indexPath) as! SizeCellTableViewCell
-        cell.sizeLabel.text = self.product + " " + (self.data[indexPath.row]["size"] ?? "")
+        guard let product = self.product, let offers = product.offers else { return cell }
+        cell.sizeLabel.text = product.name + " " + (offers[indexPath.row]["size"] ?? "")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let product = self.product, let offers = product.offers {
+            let buyItem = ProductObject()
+            buyItem.getData(id: product.id, name: product.name, colorName: product.colorName, mainImageLink: product.mainImageLink, price: product.price, size: offers[indexPath.row]["size"] ?? "")
+            Persistance.shared.save(item: buyItem)
+        }
         removeAnimate()
     }
     
